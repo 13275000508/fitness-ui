@@ -1,4 +1,4 @@
-import 'package:fitness_flutter/tabs/tabs.dart';
+import 'package:fitness_flutter/pages/login.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Geometria'),
       home: Scaffold(
-        body: Tabs(),
+        body: LoginPage(),
       ),
     );
   }

@@ -63,35 +63,52 @@ class Results extends StatelessWidget {
                         color: Colors.grey,
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 40.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          CircleBadge(
-                            color: Color.fromRGBO(190, 130, 255, 1.0),
-                            title: '1st',
-                            subtitle: 'Workout',
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(bottom: 40.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Flexible(
+                                fit: FlexFit.tight,
+                                child: CircleBadge(
+                                  color: Color.fromRGBO(190, 130, 255, 1.0),
+                                  title: '1st',
+                                  subtitle: 'Workout',
+                                ),
+                              ),
+                              SizedBox(width: 10), // Provide some spacing between the badges
+                              Flexible(
+                                fit: FlexFit.tight,
+                                child: CircleBadge(
+                                  color: Color.fromRGBO(75, 142, 255, 1.0),
+                                  title: '1000',
+                                  subtitle: 'kCal',
+                                ),
+                              ),
+                              SizedBox(width: 10), // Provide some spacing between the badges
+                              Flexible(
+                                fit: FlexFit.tight,
+                                child: CircleBadge(
+                                  color: Color.fromRGBO(255, 255, 255, 1.0),
+                                  title: '6000',
+                                  subtitle: 'kCal',
+                                ),
+                              ),
+                            ],
                           ),
-                          CircleBadge(
-                            color: Color.fromRGBO(75, 142, 255, 1.0),
-                            title: '1000',
-                            subtitle: 'kCal',
+                        ),
+                        Text(
+                          'You\'ve burned',
+                          style: TextStyle(
+                            color: Colors.grey[400],
                           ),
-                          CircleBadge(
-                            color: Color.fromRGBO(255, 255, 255, 1.0),
-                            title: '6000',
-                            subtitle: 'kCal',
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      'You\'ve burned',
-                      style: TextStyle(
-                        color: Colors.grey[400],
-                      ),
-                    ),
+
                     Container(
                       padding: EdgeInsets.symmetric(vertical: 15.0),
                       child: Row(
@@ -180,96 +197,98 @@ class Results extends StatelessWidget {
                     Container(
                       child: Row(
                         children: <Widget>[
-                          Container(
-                            width: width * 0.60 - 5.0,
-                            height: 100.0,
-                            margin: EdgeInsets.only(right: 15.0),
-                            padding: EdgeInsets.all(25.0),
-                            decoration: BoxDecoration(
-                              color: Color.fromRGBO(231, 241, 255, 1.0),
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: <Widget>[
-                                Container(
-                                  margin: EdgeInsets.only(right: 45.0),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: <Widget>[
-                                      Text(
-                                        'Weight',
-                                        style: TextStyle(
-                                          fontSize: 16.0,
-                                          color: Colors.blueGrey[200],
+                          Expanded(
+                            flex: 3, // takes 60% of the available space
+                            child: Container(
+                              height: 100.0,
+                              margin: EdgeInsets.only(right: 15.0),
+                              padding: EdgeInsets.all(25.0),
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(231, 241, 255, 1.0),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: <Widget>[
+                                  Container(
+                                    margin: EdgeInsets.only(right: 45.0),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Text(
+                                          'Weight',
+                                          style: TextStyle(
+                                            fontSize: 16.0,
+                                            color: Colors.blueGrey[200],
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        '56 Kg',
-                                        style: TextStyle(
-                                          fontSize: 20.0,
-                                          color: Colors.black54,
-                                          fontWeight: FontWeight.w900,
+                                        Text(
+                                          '56 Kg',
+                                          style: TextStyle(
+                                            fontSize: 20.0,
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w900,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: <Widget>[
-                                      Text(
-                                        'Gaind',
-                                        style: TextStyle(
-                                          fontSize: 16.0,
-                                          color: Colors.blueGrey[200],
+                                  Container(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Text(
+                                          'Gaind',
+                                          style: TextStyle(
+                                            fontSize: 16.0,
+                                            color: Colors.blueGrey[200],
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        '13 Kg',
-                                        style: TextStyle(
-                                          fontSize: 20.0,
-                                          color: Colors.black54,
-                                          fontWeight: FontWeight.w900,
+                                        Text(
+                                          '13 Kg',
+                                          style: TextStyle(
+                                            fontSize: 20.0,
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w900,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                          Container(
-                            width: width * 0.30 - 10.0,
-                            height: 100.0,
-                            padding: EdgeInsets.all(25.0),
-                            decoration: BoxDecoration(
-                              color: Color.fromRGBO(241, 227, 255, 1.0),
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  'Goal',
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    color: Colors.blueGrey[200],
+                          Expanded(
+                            flex: 0,
+                            child: Container(
+                              height: 100.0,
+                              padding: EdgeInsets.all(25.0),
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(241, 227, 255, 1.0),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    'Goal',
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      color: Colors.blueGrey[200],
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  'Add +',
-                                  style: TextStyle(
-                                    fontSize: 20.0,
-                                    color: Color.fromRGBO(190, 129, 255, 1.0),
-                                    fontWeight: FontWeight.w900,
+                                  Text(
+                                    'Add +',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                      color: Color.fromRGBO(190, 129, 255, 1.0),
+                                      fontWeight: FontWeight.w900,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ],
